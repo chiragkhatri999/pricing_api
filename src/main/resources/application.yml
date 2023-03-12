@@ -26,3 +26,9 @@ logging:
       springframework:
         web: DEBUG
       hibernate: ERROR
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  show-actuator: true
+  api-docs:
+    enabled: true

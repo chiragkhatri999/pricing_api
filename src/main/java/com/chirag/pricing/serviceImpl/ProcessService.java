@@ -5,9 +5,11 @@ import com.chirag.pricing.model.core.resource.ProcessedResource;
 import com.chirag.pricing.model.core.resource.Resource;
 import com.chirag.pricing.repo.ProcessRepository;
 import com.chirag.pricing.service.IProcessService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProcessService implements IProcessService {
 
     private final ProcessRepository processRepository;
