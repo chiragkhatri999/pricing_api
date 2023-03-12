@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: PRICING-SERVICE
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pricing
+    username: postgres
+    password: root
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  mvc:
+    format:
+      date: dd-MM-yyyy
+  port:
+    8080
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+      hibernate: ERROR
