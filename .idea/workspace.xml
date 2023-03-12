@@ -4,50 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb6bbda5-5963-44ff-a0b7-1113a2f50bfb" name="Changes" comment="Skeleton of project">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/PricingApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ProcessController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/process/ProcessResourceRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/auxillary/Packaging.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/auxillary/Process.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/auxillary/ValueWithUnit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/ConsumableIngredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/Ingredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/WeightedIngredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/product/ComposedProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/product/PackagedProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/product/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/resource/ProcessedResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/resource/Resource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/ComposedProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/ConsumableIngredientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/IngredientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/PackagedProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/PackagingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/ProcessRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/ProcessedResourceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/ResourceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IProcessService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IResourceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ProcessService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ResourceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/enums/Unit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/exceptions/UnitNotSupportedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/ConverterDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/ConverterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/UnitConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/WeightConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="fb6bbda5-5963-44ff-a0b7-1113a2f50bfb" name="Changes" comment="Skeleton of project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,6 +61,21 @@
       <option name="presentableId" value="Default" />
       <updated>1676804773371</updated>
     </task>
+    <task id="LOCAL-00001" summary="Skeleton of project">
+      <created>1678633664705</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678633664705</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Skeleton of project">
+      <created>1678633710196</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678633710196</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
