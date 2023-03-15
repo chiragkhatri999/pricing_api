@@ -2,6 +2,7 @@ package com.chirag.pricing.model.core.product;
 
 import com.chirag.pricing.model.auxillary.ValueWithUnit;
 import com.chirag.pricing.model.core.ingredient.Ingredient;
+import com.chirag.pricing.model.core.resource.Resource;
 import com.chirag.pricing.utils.enums.Unit;
 import lombok.*;
 
@@ -17,10 +18,16 @@ import java.util.Set;
 @ToString
 @Entity(name = "composed_product")
 @Table(name = "composed_product")
-public class ComposedProduct extends Product {
+public class ComposedProduct extends Resource {
 
     @OneToMany
     private Set<Ingredient> ingredients;
+
+    public ComposedProduct(Resource resource, Set<Ingredient> ingredients){
+        this.setName(resource.getName());
+        this.setRate(resource.getRate());
+        this.setIngredients(ingredients);
+    }
 
     /**
      * We will instantiate with just unit

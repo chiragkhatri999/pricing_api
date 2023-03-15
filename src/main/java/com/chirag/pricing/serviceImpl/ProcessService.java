@@ -1,5 +1,6 @@
 package com.chirag.pricing.serviceImpl;
 
+import com.chirag.pricing.dtos.process.ProcessResourceRequestDTO;
 import com.chirag.pricing.model.auxillary.Process;
 import com.chirag.pricing.model.core.resource.ProcessedResource;
 import com.chirag.pricing.model.core.resource.Resource;
@@ -26,9 +27,16 @@ public class ProcessService implements IProcessService {
     }
 
     @Override
+    public ProcessedResource processProduct(ProcessResourceRequestDTO resourceRequestDTO) {
+        return this.processProduct(resourceRequestDTO.getNewName(), resourceRequestDTO.getResource_id(), resourceRequestDTO.getProcess_id());
+    }
+
+    @Override
     public ProcessedResource processProduct(String newName, Resource resource, Process process) {
         return process.process(newName, resource);
     }
+
+
 
     @Override
     public ProcessedResource processProduct(String newName, Long resource_id, Long process_id){
@@ -40,5 +48,10 @@ public class ProcessService implements IProcessService {
     @Override
     public Process getById(Long id){
         return this.processRepository.getReferenceById(id);
+    }
+
+    public void delete(Long id){
+        Process toBeDelete = this.getById(id);
+        this.processRepository.delete(toBeDelete);
     }
 }

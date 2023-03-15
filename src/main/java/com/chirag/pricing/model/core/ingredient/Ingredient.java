@@ -7,6 +7,10 @@ import lombok.*;
 
 import javax.persistence.*;
 
+/**
+ * To Model the ingredients in a product
+ */
+
 @Getter
 @Setter
 @NoArgsConstructor

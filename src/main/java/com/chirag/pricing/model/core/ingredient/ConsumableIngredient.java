@@ -6,16 +6,15 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
+ * To model entity whose weight is not considered in final product
  * Weight is reduced to zero
  */
 @Getter
 @Setter
 @ToString
 @Entity(name = "consumable_ingredient")
-@Table(name = "consumable_ingredient")
 public class ConsumableIngredient extends Ingredient {
 
     @Override
