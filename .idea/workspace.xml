@@ -5,33 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb6bbda5-5963-44ff-a0b7-1113a2f50bfb" name="Changes" comment="model cleanup and basic controller defs">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ComposeProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ResourceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/interfaces/ICreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/interfaces/IUpdator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/product/ComposedProductCreateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/product/ComposedProductUpdateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/resource/ResourceCreateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/resource/ResourceUpdateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IComposedProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ComposedProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/enums/converter/UnitEnumConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ProcessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/auxillary/Packaging.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/ConsumableIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/ConsumableIngredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/WeightedIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/WeightedIngredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/product/ComposedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/product/ComposedProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/product/PackagedProduct.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/product/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/PackagedProductRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/PackagingRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/ProductRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IProcessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IProcessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IResourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IResourceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ProcessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ProcessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ResourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ResourceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/enums/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/enums/Unit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,15 +60,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Work/Coding/Java/Spring-boot/pricing/src/main/java/com/chirag/pricing/dtos/product",
-    "settings.editor.selected.configurable": "project.propVCSSupport.ChangelistConflict"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Work/Coding/Java/Spring-boot/pricing/src/main/java/com/chirag/pricing/dtos/product&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.ChangelistConflict&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Work\Coding\Java\Spring-boot\pricing\src\main\java\com\chirag\pricing\dtos\product" />
@@ -132,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678641148028</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="model cleanup and basic controller defs">
+      <created>1678902494048</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678902494049</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
