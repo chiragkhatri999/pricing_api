@@ -1,12 +1,8 @@
 package com.chirag.pricing.dtos.process;
 
-import lombok.*;
+import lombok.Data;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
+@Data
 public class ProcessResourceRequestDTO {
     private Long process_id;
     private Long resource_id;

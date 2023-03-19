@@ -1,6 +1,7 @@
 package com.chirag.pricing.utils.services.unitconversion;
 
 import com.chirag.pricing.utils.enums.Unit;
+import com.chirag.pricing.utils.services.unitconversion.definitions.WeightConverterDefinition;
 
 import java.util.HashSet;
 import java.util.Optional;
@@ -13,6 +14,9 @@ public class ConverterFactory {
 
     private static final Set<ConverterDefinition> converterDefinitions =  new HashSet<>();
 
+    /**
+     * Calling converter implementation register
+     */
     static {
         registerConverterDefinitions();
     }
@@ -23,7 +27,10 @@ public class ConverterFactory {
      */
     public static Optional<UnitConverter> getConverter(Unit target){
         // Choose converter definition
-        Optional<ConverterDefinition> chosenConverterDefinition = converterDefinitions.stream().filter(converterDefinition -> converterDefinition.supportedUnits.contains(target)).findFirst();
+        Optional<ConverterDefinition> chosenConverterDefinition =
+                ConverterFactory.converterDefinitions.stream()
+                        .filter(converterDefinition -> converterDefinition.getSupportedUnits().contains(target))
+                        .findFirst();
         if(chosenConverterDefinition.isPresent()){
             UnitConverter unitConverter = new UnitConverter(target, chosenConverterDefinition.get());
             return Optional.of(unitConverter);
@@ -36,6 +43,6 @@ public class ConverterFactory {
      * To register converter definitions as they get developed
      */
     private static void registerConverterDefinitions(){
-        converterDefinitions.add(new WeightConverter());
+        converterDefinitions.add(new WeightConverterDefinition());
     }
 }

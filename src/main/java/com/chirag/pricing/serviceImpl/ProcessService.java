@@ -33,7 +33,8 @@ public class ProcessService implements IProcessService {
 
     @Override
     public ProcessedResource processProduct(String newName, Resource resource, Process process) {
-        return process.process(newName, resource);
+        ProcessedResource processedResource = process.process(newName, resource);
+        return processedResource;
     }
 
 

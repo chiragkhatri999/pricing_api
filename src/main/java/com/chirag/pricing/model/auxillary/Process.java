@@ -2,9 +2,10 @@ package com.chirag.pricing.model.auxillary;
 
 import com.chirag.pricing.model.core.resource.ProcessedResource;
 import com.chirag.pricing.model.core.resource.Resource;
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -12,10 +13,10 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @Entity(name = "process")
-public class Process {
+public class Process implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name="name")

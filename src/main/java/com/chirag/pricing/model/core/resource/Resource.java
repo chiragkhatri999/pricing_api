@@ -1,9 +1,10 @@
 package com.chirag.pricing.model.core.resource;
 
 import com.chirag.pricing.model.auxillary.ValueWithUnit;
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -11,12 +12,12 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @Entity(name = "resource")
-@Table(name = "ingredient")
+@Table(name = "resource")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Resource{
+public class Resource implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name="name")

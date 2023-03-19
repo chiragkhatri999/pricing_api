@@ -4,13 +4,9 @@ import com.chirag.pricing.dtos.interfaces.ICreator;
 import com.chirag.pricing.model.auxillary.ValueWithUnit;
 import com.chirag.pricing.model.core.resource.Resource;
 import com.chirag.pricing.utils.enums.Unit;
-import lombok.*;
+import lombok.Data;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
+@Data
 public class ResourceCreateDTO implements ICreator<Resource> {
     private String name;
     private double cost;

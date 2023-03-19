@@ -19,29 +19,54 @@ public class ResourceController {
         this.resourceService = resourceService;
     }
 
+    /**
+     * Get all resources
+     * @return
+     */
     @GetMapping("")
     public ResponseEntity<List<Resource>> getAll(){
         return ResponseEntity.ok(this.resourceService.getAll());
     }
 
-    @GetMapping("/:id")
+    /**
+     * Get resource
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
     public ResponseEntity<Resource> get(@PathVariable("id") Long id){
         return ResponseEntity.ok(this.resourceService.getById(id));
     }
 
-    @DeleteMapping("/delete/:id")
+    /**
+     * Delete resource
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") Long id){
         this.resourceService.delete(id);
         return ResponseEntity.ok().build();
     }
 
+    /**
+     * Create resource
+     * @param resourceCreateDTO
+     * @return
+     */
     @PostMapping("")
     public ResponseEntity<Resource> create(@RequestBody ResourceCreateDTO resourceCreateDTO){
         Resource resource = this.resourceService.create(resourceCreateDTO);
         return ResponseEntity.ok(resource);
     }
 
-    @PutMapping("/:id")
+    /**
+     * Update resource
+     * @param id
+     * @param resourceUpdateDTO
+     * @return
+     */
+    @PutMapping("/{id}")
     public ResponseEntity<Resource> update(@PathVariable("id") Long id,  @RequestBody ResourceUpdateDTO resourceUpdateDTO){
         Resource updatedResource = this.resourceService.update(id, resourceUpdateDTO);
         return ResponseEntity.ok(updatedResource);

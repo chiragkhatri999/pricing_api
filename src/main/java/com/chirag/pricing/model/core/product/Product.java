@@ -4,11 +4,13 @@ import com.chirag.pricing.model.auxillary.ValueWithUnit;
 import com.chirag.pricing.model.core.ingredient.Ingredient;
 import com.chirag.pricing.model.core.resource.Resource;
 import com.chirag.pricing.utils.enums.Unit;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Set;
 
 @Getter
@@ -16,25 +18,19 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Entity(name = "composed_product")
-@Table(name = "composed_product")
-public class ComposedProduct extends Resource {
+@Entity(name = "product")
+@Table(name = "product")
+public class Product extends Resource implements Serializable {
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = Ingredient.class)
     private Set<Ingredient> ingredients;
-
-    public ComposedProduct(Resource resource, Set<Ingredient> ingredients){
-        this.setName(resource.getName());
-        this.setRate(resource.getRate());
-        this.setIngredients(ingredients);
-    }
 
     /**
      * We will instantiate with just unit
      * Ingredients will be added later
      * @param unit for rate calculation
      */
-    public ComposedProduct(String name, Unit unit){
+    public Product(String name, Unit unit){
         super();
         this.setName(name);
         this.setRate(new ValueWithUnit(0.0d, unit));
@@ -59,7 +55,7 @@ public class ComposedProduct extends Resource {
         this.setRate(new ValueWithUnit(totalCost, this.getRate().getUnit()));
     }
 
-    public ComposedProduct(String name, Unit unit, Set<Ingredient> ingredients){
+    public Product(String name, Unit unit, Set<Ingredient> ingredients){
         super();
         this.setName(name);
         this.setRate(new ValueWithUnit(0.0d, unit));

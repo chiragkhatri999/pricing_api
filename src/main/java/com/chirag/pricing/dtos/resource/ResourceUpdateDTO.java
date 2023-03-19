@@ -3,7 +3,9 @@ package com.chirag.pricing.dtos.resource;
 import com.chirag.pricing.dtos.interfaces.IUpdator;
 import com.chirag.pricing.model.auxillary.ValueWithUnit;
 import com.chirag.pricing.model.core.resource.Resource;
+import lombok.Data;
 
+@Data
 public class ResourceUpdateDTO extends ResourceCreateDTO implements IUpdator<Resource> {
 
     /**

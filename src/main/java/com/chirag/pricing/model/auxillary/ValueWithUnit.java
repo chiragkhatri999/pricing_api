@@ -4,10 +4,10 @@ import com.chirag.pricing.utils.enums.Unit;
 import com.chirag.pricing.utils.exceptions.UnitNotSupportedException;
 import com.chirag.pricing.utils.services.unitconversion.ConverterFactory;
 import com.chirag.pricing.utils.services.unitconversion.UnitConverter;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import java.util.Optional;
 
 @Getter
@@ -75,5 +75,9 @@ public class ValueWithUnit {
             cost = this.getValue();
         }
         return cost;
+    }
+
+    public static ValueWithUnit createWithUnit(Unit unit){
+        return new ValueWithUnit(0.0d, unit);
     }
 }

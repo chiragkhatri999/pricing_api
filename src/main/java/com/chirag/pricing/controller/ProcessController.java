@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/process")
+@RequestMapping("/api/process")
 public class ProcessController {
 
     private final IProcessService processService;
@@ -18,21 +18,42 @@ public class ProcessController {
     public ProcessController(IProcessService processService){
         this.processService = processService;
     }
+
+    /**
+     * Get all processes
+     * @return
+     */
     @GetMapping("")
-    public List<Process> getAllProcesses(){
-        return this.processService.getAll();
+    public ResponseEntity<List<Process>> getAllProcesses(){
+        return ResponseEntity.ok(this.processService.getAll());
     }
 
+    /**
+     * get process
+     * @param id
+     * @return
+     */
     @GetMapping("/:id")
     public ResponseEntity<Process> get(@PathVariable("id") Long id){
         return ResponseEntity.ok(this.processService.getById(id));
     }
+
+    /**
+     * Process resource
+     * @param request
+     * @return
+     */
     @PostMapping("")
     public ResponseEntity<ProcessedResource> processResource(@RequestBody ProcessResourceRequestDTO request){
         ProcessedResource processedResource =  processService.processProduct(request.getNewName(), request.getResource_id(), request.getProcess_id());
         return ResponseEntity.ok(processedResource);
     }
 
+    /**
+     * Delete process
+     * @param id
+     * @return
+     */
     @DeleteMapping("/delete/:id")
     public ResponseEntity delete(@PathVariable("id") Long id){
         this.processService.delete(id);

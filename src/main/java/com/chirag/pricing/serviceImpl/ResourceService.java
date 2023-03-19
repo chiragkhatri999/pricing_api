@@ -36,7 +36,8 @@ public class ResourceService implements IResourceService {
 
     @Override
     public Resource create(ResourceCreateDTO resourceCreateDTO) {
-        return resourceCreateDTO.create();
+        Resource resource = this.resourceRepository.save(resourceCreateDTO.create());
+        return resource;
     }
 
     @Override

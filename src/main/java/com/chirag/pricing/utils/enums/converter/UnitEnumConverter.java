@@ -1,9 +1,9 @@
 package com.chirag.pricing.utils.enums.converter;
 
 import com.chirag.pricing.utils.enums.Unit;
+import jakarta.persistence.AttributeConverter;
+import jakarta.persistence.Converter;
 
-import javax.persistence.AttributeConverter;
-import javax.persistence.Converter;
 import java.util.stream.Stream;
 @Converter(autoApply = true)
 public class UnitEnumConverter implements AttributeConverter<Unit, String> {

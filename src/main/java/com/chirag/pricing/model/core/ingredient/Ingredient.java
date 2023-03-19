@@ -3,9 +3,10 @@ package com.chirag.pricing.model.core.ingredient;
 import com.chirag.pricing.model.auxillary.ValueWithUnit;
 import com.chirag.pricing.model.core.resource.Resource;
 import com.chirag.pricing.utils.enums.Unit;
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * To Model the ingredients in a product
@@ -18,13 +19,14 @@ import javax.persistence.*;
 @ToString
 @Entity(name = "ingredient")
 @Table(name = "ingredient")
-public class Ingredient {
+public class Ingredient implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.REFRESH, targetEntity = Resource.class)
+    @JoinColumn(name = "resourceId", referencedColumnName = "id")
     private Resource resource;
 
     @Embedded
