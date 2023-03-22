@@ -40,7 +40,8 @@ public class Process implements Serializable {
      */
     public ProcessedResource process(String newName, Resource resource){
         ValueWithUnit newRate = this.getUpdatedProductRate(resource.getRate());
-        return new ProcessedResource(newName, newRate, this,resource);
+        ProcessedResource processedResource = new ProcessedResource(newName, newRate, this,resource);
+        return processedResource;
     }
 
     private ValueWithUnit getUpdatedProductRate(ValueWithUnit originalRate){

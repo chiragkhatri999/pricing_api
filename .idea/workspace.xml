@@ -5,45 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb6bbda5-5963-44ff-a0b7-1113a2f50bfb" name="Changes" comment="refactored the controllers and did basic testing">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/configuration/JacksonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/configuration/RestTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/IngredientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/IdListDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/ingredient/IngredientCreateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/ingredient/IngredientUpdateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/product/ProductCreateWithIngredientsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IIngredientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/IngredientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/definitions/WeightConverterDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ProcessedResourceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/process/ProcessCreateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IProcessedResourceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ProcessedResourceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ComposeProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ProcessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/controller/ResourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/process/ProcessResourceRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/process/ProcessResourceRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/product/ComposedProductCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/product/ProductCreateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/product/ComposedProductUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/product/ProductUpdateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/process/ProcessResourceRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/process/ResourceProcessDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/resource/ResourceCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/resource/ResourceCreateDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/resource/ResourceUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/dtos/resource/ResourceUpdateDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/auxillary/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/auxillary/Process.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/auxillary/ValueWithUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/auxillary/ValueWithUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/ConsumableIngredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/ConsumableIngredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/ingredient/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/product/ComposedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/resource/ProcessedResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/resource/ProcessedResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/resource/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/core/resource/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/ComposedProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/repo/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IComposedProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ComposedProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IProcessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/service/IProcessService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ProcessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ProcessService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ResourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/serviceImpl/ResourceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/enums/converter/UnitEnumConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/enums/converter/UnitEnumConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/ConverterDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/ConverterDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/ConverterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/ConverterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/UnitConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/UnitConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chirag/pricing/utils/services/unitconversion/WeightConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +60,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2LxFP5EVJZeOIhLijbvJemifbVA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -96,15 +70,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Work/Coding/Java/Spring-boot/pricing/src/main/java/com/chirag/pricing/dtos/product&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.ChangelistConflict&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TODO_SCOPE": "All Places",
+    "last_opened_file_path": "C:/Work/Coding/Java/Spring-boot/pricing/src/main/java/com/chirag/pricing/dtos/product",
+    "settings.editor.selected.configurable": "project.propVCSSupport.ChangelistConflict"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Work\Coding\Java\Spring-boot\pricing\src\main\java\com\chirag\pricing\dtos\product" />
@@ -158,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679128843279</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactored the controllers and did basic testing">
+      <created>1679249622524</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679249622524</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -195,7 +177,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/chirag/pricing/model/auxillary/Process.java</url>
-          <line>46</line>
+          <line>47</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

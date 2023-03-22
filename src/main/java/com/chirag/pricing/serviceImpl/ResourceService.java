@@ -2,6 +2,7 @@ package com.chirag.pricing.serviceImpl;
 
 import com.chirag.pricing.dtos.resource.ResourceCreateDTO;
 import com.chirag.pricing.dtos.resource.ResourceUpdateDTO;
+import com.chirag.pricing.model.auxillary.ValueWithUnit;
 import com.chirag.pricing.model.core.resource.Resource;
 import com.chirag.pricing.repo.ResourceRepository;
 import com.chirag.pricing.service.IResourceService;
@@ -36,14 +37,21 @@ public class ResourceService implements IResourceService {
 
     @Override
     public Resource create(ResourceCreateDTO resourceCreateDTO) {
-        Resource resource = this.resourceRepository.save(resourceCreateDTO.create());
-        return resource;
+        Resource resource = new Resource();
+        resource.setName(resourceCreateDTO.getName());
+        ValueWithUnit rate = new ValueWithUnit(resourceCreateDTO.getCost(), resourceCreateDTO.getUnit());
+        resource.setRate(rate);
+        Resource createdResource = this.resourceRepository.save(resource);
+        return createdResource;
     }
 
     @Override
     public Resource update(Long id,  ResourceUpdateDTO resourceUpdateDTO){
         Resource toUpdate = this.getById(id);
-        resourceUpdateDTO.update(toUpdate);
-        return this.resourceRepository.save(toUpdate);
+        toUpdate.setName(resourceUpdateDTO.getName());
+        ValueWithUnit rate =  new ValueWithUnit(resourceUpdateDTO.getCost(), resourceUpdateDTO.getUnit());
+        toUpdate.setRate(rate);
+        Resource updatedResource = this.resourceRepository.save(toUpdate);
+        return updatedResource;
     }
 }

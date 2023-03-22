@@ -1,7 +1,8 @@
 package com.chirag.pricing.serviceImpl;
 
-import com.chirag.pricing.dtos.process.ProcessResourceRequestDTO;
+import com.chirag.pricing.dtos.process.ProcessCreateDTO;
 import com.chirag.pricing.model.auxillary.Process;
+import com.chirag.pricing.model.auxillary.ValueWithUnit;
 import com.chirag.pricing.model.core.resource.ProcessedResource;
 import com.chirag.pricing.model.core.resource.Resource;
 import com.chirag.pricing.repo.ProcessRepository;
@@ -27,23 +28,28 @@ public class ProcessService implements IProcessService {
     }
 
     @Override
-    public ProcessedResource processProduct(ProcessResourceRequestDTO resourceRequestDTO) {
-        return this.processProduct(resourceRequestDTO.getNewName(), resourceRequestDTO.getResource_id(), resourceRequestDTO.getProcess_id());
+    public Process create(ProcessCreateDTO processCreateDTO) {
+        Process process = new Process();
+        process.setName(processCreateDTO.getName());
+        ValueWithUnit rate = new ValueWithUnit(processCreateDTO.getCost(), processCreateDTO.getUnit());
+        process.setRate(rate);
+        process.setQuantityChangePercentage(processCreateDTO.getQuantityChangePercentage());
+        Process createdProcess = this.processRepository.save(process);
+        return createdProcess;
     }
 
     @Override
-    public ProcessedResource processProduct(String newName, Resource resource, Process process) {
-        ProcessedResource processedResource = process.process(newName, resource);
+    public ProcessedResource processProduct(String name, Resource resource, Process process) {
+        ProcessedResource processedResource = process.process(name, resource);
+
         return processedResource;
     }
 
-
-
     @Override
-    public ProcessedResource processProduct(String newName, Long resource_id, Long process_id){
+    public ProcessedResource processProduct(String name, Long resource_id, Long process_id){
         Resource resource = this.resourceService.getById(resource_id);
         Process process = this.getById(process_id);
-        return this.processProduct(newName, resource, process);
+        return this.processProduct(name, resource, process);
     }
 
     @Override

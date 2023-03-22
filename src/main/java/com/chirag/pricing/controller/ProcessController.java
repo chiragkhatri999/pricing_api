@@ -1,9 +1,11 @@
 package com.chirag.pricing.controller;
 
-import com.chirag.pricing.dtos.process.ProcessResourceRequestDTO;
+import com.chirag.pricing.dtos.process.ProcessCreateDTO;
+import com.chirag.pricing.dtos.process.ResourceProcessDTO;
 import com.chirag.pricing.model.auxillary.Process;
 import com.chirag.pricing.model.core.resource.ProcessedResource;
 import com.chirag.pricing.service.IProcessService;
+import com.chirag.pricing.service.IProcessedResourceService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,9 +16,13 @@ import java.util.List;
 public class ProcessController {
 
     private final IProcessService processService;
+    private final IProcessedResourceService processedResourceService;
 
-    public ProcessController(IProcessService processService){
+    public ProcessController(
+            IProcessService processService,
+            IProcessedResourceService processedResourceService){
         this.processService = processService;
+        this.processedResourceService = processedResourceService;
     }
 
     /**
@@ -33,20 +39,33 @@ public class ProcessController {
      * @param id
      * @return
      */
-    @GetMapping("/:id")
+    @GetMapping("/{id}")
     public ResponseEntity<Process> get(@PathVariable("id") Long id){
         return ResponseEntity.ok(this.processService.getById(id));
     }
 
     /**
-     * Process resource
-     * @param request
+     * Create process
+     * @param processCreateDTO
      * @return
      */
     @PostMapping("")
-    public ResponseEntity<ProcessedResource> processResource(@RequestBody ProcessResourceRequestDTO request){
-        ProcessedResource processedResource =  processService.processProduct(request.getNewName(), request.getResource_id(), request.getProcess_id());
-        return ResponseEntity.ok(processedResource);
+    public ResponseEntity<Process> create(@RequestBody ProcessCreateDTO processCreateDTO){
+        return ResponseEntity.ok(this.processService.create(processCreateDTO));
+    }
+
+    /**
+     * Process resource
+     * @param processId
+     * @param resourceId
+     * @param resourceProcessDTO
+     * @return
+     */
+    @PostMapping("/processResource")
+    public ResponseEntity<ProcessedResource> processResource(@RequestParam("processId") Long processId, @RequestParam("resourceId") Long resourceId, @RequestBody ResourceProcessDTO resourceProcessDTO){
+        ProcessedResource processedResource =  processService.processProduct(resourceProcessDTO.getName(), resourceId, processId);
+        ProcessedResource createdProcessedResource = this.processedResourceService.save(processedResource);
+        return ResponseEntity.ok(createdProcessedResource);
     }
 
     /**
